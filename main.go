@@ -9,6 +9,8 @@ import (
 var solvers = map[string]func(){
 	"1": solveProblem1,
 	"2": solveProblem2,
+	"4": solveProblem4,
+	"5": solveProblem5,
 }
 
 func main() {
