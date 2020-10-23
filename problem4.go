@@ -3,10 +3,15 @@ package main
 import "fmt"
 
 func solveProblem4() {
+	answer := maxPalindromicProductOfIntegersBetween(100, 999)
+	fmt.Printf("Largest palindromic product of 3-digit numbers is %d\n", answer)
+}
+
+func maxPalindromicProductOfIntegersBetween(min, max int) int {
 	maxPalindromicProduct := 0
 
-	for i := 100; i < 1000; i++ {
-		for j := 100; j < 1000; j++ {
+	for i := min; i <= max; i++ {
+		for j := min; j <= max; j++ {
 			product := i * j
 			productString := fmt.Sprintf("%d", product)
 
@@ -16,7 +21,7 @@ func solveProblem4() {
 		}
 	}
 
-	fmt.Printf("Largest palindromic product of 3-digit numbers is %d\n", maxPalindromicProduct)
+	return maxPalindromicProduct
 }
 
 // https://github.com/golang/example/blob/master/stringutil/reverse.go
